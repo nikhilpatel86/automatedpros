@@ -1,0 +1,36 @@
+
+
+
+Code is uploaded on the publuc repo Github Repo for review purpose
+
+Repo URL : https://github.com/nikhilpatel86/automatedpros
+Demo Video URL : https://www.awesomescreenshot.com/video/26406652?key=246062643c29b236876002916fbe5882
+
+To setup in local
+
+mkdir automatedpros
+cd automatedpros
+git clone -b master https://github.com/nikhilpatel86/automatedpros.git ./
+
+in .env file do the below database changes
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=automatedpros
+DB_USERNAME=root
+DB_PASSWORD=
+DB_COLLATION=utf8mb4_unicode_ci 
+
+
+composer install
+cp .env.example .env
+php artisan key:generate
+
+php artisan migrate
+php artisan serve
+
+
+
+Visit below Route to test AJAX Based Registration and DataTableGrid : http://127.0.0.1:8000/customers
+Visit below Route to test AJAX Based Image Upload and Display Without Page Refresh : http://127.0.0.1:8000/ajax_upload
