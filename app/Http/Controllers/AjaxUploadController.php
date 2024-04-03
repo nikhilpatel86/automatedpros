@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
+use App\Models\FileUpload;
 
 class AjaxUploadController extends Controller
 {
@@ -21,6 +22,13 @@ class AjaxUploadController extends Controller
       $image = $request->file('select_file');
       $new_name = rand() . '.' . $image->getClientOriginalExtension();
       $image->move(public_path('images'), $new_name);
+
+      # Save File to database on successfull upload
+       $file = new FileUpload;
+       $file->name = $new_name;
+       $file->save();
+
+     # Show success message and display uploaded file
       return response()->json([
        'message'   => 'Image Upload Successfully',
        'uploaded_image' => '<img src="/images/'.$new_name.'" class="img-thumbnail" width="300" />',
