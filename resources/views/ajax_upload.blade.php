@@ -6,10 +6,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  
  </head>
  <body>
   <br />
   <div class="container">
+
+  <br>
+            <center>
+            <a class="link-info" href="{{ route('ajaxupload.index' )}}">Visit AJAX Image uploading</a>   | 
+            <a class="link-info" href="{{ route('customers.index' )}}">Visit AJAX Registration TableGrid</a>
+           </center>
+           <br>
+
+
    <h3 align="center">Upload and Display Image in using Ajax</h3>
    <br />
    <div class="alert" id="message" style="display: none"></div>
